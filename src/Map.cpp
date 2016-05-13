@@ -46,6 +46,9 @@ void Map::DrawGround()
 {
     Block *b = new Block(2.0f, 2.0f, 2.0f);
 
+    CCube* pCube = new CCube(2,2);
+    pCube->DrawCube();
+
     glEnable(GL_TEXTURE_2D);
     glColor3f(1.0f, 1.0f, 1.0f);
     glBindTexture(GL_TEXTURE_2D, ListeTextures[11]);

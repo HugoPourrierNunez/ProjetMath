@@ -10,35 +10,31 @@
 class CQuaternion
 {
     public:
-        CQuaternion(int x, int y, int z, int w);
+        CQuaternion(double angleDegree, CVecteur* pVecteur);
         virtual ~CQuaternion();
         CMatrice* QuaternionToMatrice();
         CQuaternion* MatriceToQuaternion();
         CQuaternion* QuaternionMultiplication(CQuaternion* q1, CQuaternion* q2);
         CQuaternion* ConjugueQuaternion();
         CQuaternion* AdditionQuaternion(CQuaternion* q1, CQuaternion* q2);
-        int NormeQuaternion();
+        double NormeQuaternion();
 
-        int GetX();
-        int GetY();
-        int GetZ();
-        int GetW();
+        double GetX();
+        double GetY();
+        double GetZ();
+        double GetW();
 
-        void SetX(int i);
-        void SetY(int i);
-        void SetZ(int i);
-        void SetW(int i);
+        void SetX(double i);
+        void SetY(double i);
+        void SetZ(double i);
+        void SetW(double i);
 
     protected:
     private:
-        int m_iX;
-        int m_iY;
-        int m_iZ;
-        int m_iW;
-
-        CQuaternion* m_qI;
-        CQuaternion* m_qJ;
-        CQuaternion* m_qK;
+        double m_dX;
+        double m_dY;
+        double m_dZ;
+        double m_dW;
 };
 
 #endif // CQUATERNION_H

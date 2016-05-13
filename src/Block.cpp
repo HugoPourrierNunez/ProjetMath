@@ -126,6 +126,7 @@ void Block::Draw()
         glVertex3f(x, 0.0f, z);
         glTexCoord2f(x/TEXTURE_SCALE, 0.0f);
         glVertex3f(x, 0.0f, 0.0f);
+        glutSolidCube(1.0);
     glEnd();
 
     /** LEFT **/

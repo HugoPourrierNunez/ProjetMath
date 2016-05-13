@@ -1,10 +1,10 @@
 #include "CVecteur.h"
 
-CVecteur::CVecteur(int x, int y, int z)
+CVecteur::CVecteur(double x, double y, double z)
 {
-    m_iX = x;
-    m_iY = y;
-    m_iZ = z;
+    m_dX = x;
+    m_dY = y;
+    m_dZ = z;
 }
 
 CVecteur::~CVecteur()
@@ -13,19 +13,19 @@ CVecteur::~CVecteur()
 }
 
 // Début accesseurs
-int CVecteur::GetX()
+double CVecteur::GetX()
 {
-    return m_iX;
+    return m_dX;
 }
 
-int CVecteur::GetY()
+double CVecteur::GetY()
 {
-    return m_iY;
+    return m_dY;
 }
 
-int CVecteur::GetZ()
+double CVecteur::GetZ()
 {
-    return m_iZ;
+    return m_dZ;
 }
 
 // Fin accesseurs

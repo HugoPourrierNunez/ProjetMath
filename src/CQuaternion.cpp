@@ -1,14 +1,15 @@
 #include "CQuaternion.h"
 
-CQuaternion::CQuaternion(int x, int y, int z, int w)
+CQuaternion::CQuaternion(double angleDegree, CVecteur* pVecteur)
 {
-    m_iX = x;
-    m_iY = y;
-    m_iZ = z;
-    m_iW = w;
-    m_qI = NULL;
-    m_qJ = NULL;
-    m_qK = NULL;
+
+    double degRadian;
+    degRadian =  angleDegree * M_PI / 180.0;
+
+    m_dX = cos(degRadian/2);
+    m_dY = pVecteur->GetX() * sin(degRadian/2);
+    m_dZ = pVecteur->GetY() * sin(degRadian/2);
+    m_dW = pVecteur->GetZ() * sin(degRadian/2);
 }
 
 CQuaternion::~CQuaternion()
@@ -17,44 +18,44 @@ CQuaternion::~CQuaternion()
 }
 
 // Début accesseurs
-int CQuaternion::GetX()
+double CQuaternion::GetX()
 {
-    return m_iX;
+    return m_dX;
 }
 
-int CQuaternion::GetY()
+double CQuaternion::GetY()
 {
-    return m_iY;
+    return m_dY;
 }
 
-int CQuaternion::GetZ()
+double CQuaternion::GetZ()
 {
-    return m_iZ;
+    return m_dZ;
 }
 
-int CQuaternion::GetW()
+double CQuaternion::GetW()
 {
-    return m_iW;
+    return m_dW;
 }
 
-void CQuaternion::SetX(int i)
+void CQuaternion::SetX(double i)
 {
-    m_iX = i;
+    m_dX = i;
 }
 
-void CQuaternion::SetY(int i)
+void CQuaternion::SetY(double i)
 {
-    m_iY = i;
+    m_dY = i;
 }
 
-void CQuaternion::SetZ(int i)
+void CQuaternion::SetZ(double i)
 {
-    m_iZ = i;
+    m_dZ = i;
 }
 
-void CQuaternion::SetW(int i)
+void CQuaternion::SetW(double i)
 {
-    m_iW = i;
+    m_dW = i;
 }
 // Fin accesseurs
 
@@ -69,17 +70,17 @@ CMatrice* CQuaternion::QuaternionToMatrice()
 {
     CMatrice* matriceResultat = NULL;
 
-    int x1y1 = (1 - 2 * sqrt(this->m_iY)) - (2 * sqrt(this->m_iZ));
-    int x1y2 = (2 * this->m_iY * this->m_iX) - (2 * this->m_iZ * this->m_iW);
-    int x1y3 = (2 * this->m_iZ * this->m_iX) + (2 * this->m_iY * this->m_iW);
+    double x1y1 = (1 - 2 * (this->m_dY * this->m_dY)) - (2 * (this->m_dZ * this->m_dZ));
+    double x1y2 = (2 * this->m_dY * this->m_dX) - (2 * this->m_dZ * this->m_dW);
+    double x1y3 = (2 * this->m_dZ * this->m_dX) + (2 * this->m_dY * this->m_dW);
 
-    int x2y1 = (2 * this->m_iY * this->m_iX) + (2 * this->m_iZ * this->m_iW);
-    int x2y2 = (1 - 2 * sqrt(this->m_iX)) - (2 * sqrt(this->m_iZ));
-    int x2y3 = (2 * this->m_iY * this->m_iZ) - (2 * this->m_iX * this->m_iW);
+    double x2y1 = (2 * this->m_dY * this->m_dX) + (2 * this->m_dZ * this->m_dW);
+    double x2y2 = (1 - 2 * (this->m_dX * this->m_dX)) - (2 * (this->m_dZ * this->m_dZ));
+    double x2y3 = (2 * this->m_dY * this->m_dZ) - (2 * this->m_dX * this->m_dW);
 
-    int x3y1 = (2 * this->m_iZ * this->m_iX) - (2 * this->m_iY * this->m_iW);
-    int x3y2 = (2 * this->m_iY * this->m_iZ) + (2 * this->m_iX * this->m_iW);
-    int x3y3 = (1 - 2 * sqrt(this->m_iX)) - (2 * sqrt(this->m_iY));;
+    double x3y1 = (2 * this->m_dZ * this->m_dX) - (2 * this->m_dY * this->m_dW);
+    double x3y2 = (2 * this->m_dY * this->m_dZ) + (2 * this->m_dX * this->m_dW);
+    double x3y3 = (1 - 2 * (this->m_dX * this->m_dX)) - (2 * (this->m_dY * this->m_dY));;
 
     matriceResultat = new CMatrice(x1y1,x1y2,x1y3,
                                x2y1,x2y2,x2y3,
@@ -98,11 +99,7 @@ CQuaternion* CQuaternion::QuaternionMultiplication(CQuaternion* q1, CQuaternion*
     if(q1 == NULL || q2 == NULL)
         return NULL;
 
-    m_qI = new CQuaternion(0, 1, 0, 0);
-    m_qJ = new CQuaternion(0, 0, 1, 0);
-    m_qK = new CQuaternion(0, 0, 0, 1);
-
-    CQuaternion* qResultat = new CQuaternion(0,0,0,0);
+    CQuaternion* qResultat = new CQuaternion(0, new CVecteur(0,0,0));
 
     qResultat->SetX((q1->GetX() * q2->GetX()) - (q1->GetY() * q2->GetY()) - (q1->GetZ() * q2->GetZ()) - (q1->GetW() * q2->GetW()));
     qResultat->SetY((q1->GetX() * q2->GetY()) + (q1->GetY() * q2->GetX()) + (q1->GetZ() * q2->GetW()) - (q1->GetW() * q2->GetZ()));
@@ -114,14 +111,14 @@ CQuaternion* CQuaternion::QuaternionMultiplication(CQuaternion* q1, CQuaternion*
 
 CQuaternion* CQuaternion::ConjugueQuaternion()
 {
-    CQuaternion* pConjugue = new CQuaternion(m_iX, -m_iY, -m_iZ, -m_iW);
+    CQuaternion* pConjugue = new CQuaternion(m_dX, new CVecteur(-m_dY, -m_dZ, -m_dW));
 
     return pConjugue;
 }
 
-int CQuaternion::NormeQuaternion()
+double CQuaternion::NormeQuaternion()
 {
-    return sqrt( m_iW * m_iW + m_iX * m_iX + m_iY * m_iY + m_iZ * m_iZ);
+    return sqrt( m_dW * m_dW + m_dX * m_dX + m_dY * m_dY + m_dZ * m_dZ);
 }
 
 CQuaternion* CQuaternion::AdditionQuaternion(CQuaternion* q1, CQuaternion* q2)
@@ -134,7 +131,7 @@ CQuaternion* CQuaternion::AdditionQuaternion(CQuaternion* q1, CQuaternion* q2)
 
     CVecteur* pV3 = pV1->AdditionVecteur(pV1, pV2);
 
-    CQuaternion* qResultat = new CQuaternion(q1->GetX() + q2->GetX(), pV3->GetX(), pV3->GetY(), pV3->GetZ());
+    CQuaternion* qResultat = new CQuaternion(q1->GetX() + q2->GetX(), new CVecteur(pV3->GetX(), pV3->GetY(), pV3->GetZ()));
 
     return qResultat;
 }

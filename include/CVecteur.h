@@ -5,17 +5,17 @@
 class CVecteur
 {
     public:
-        CVecteur(int x, int y, int z);
+        CVecteur(double x, double y, double z);
         virtual ~CVecteur();
-        int GetX();
-        int GetY();
-        int GetZ();
+        double GetX();
+        double GetY();
+        double GetZ();
         static CVecteur* AdditionVecteur(CVecteur* v1, CVecteur* v2);
     protected:
     private:
-        int m_iX;
-        int m_iY;
-        int m_iZ;
+        double m_dX;
+        double m_dY;
+        double m_dZ;
 };
 
 #endif // CVECTEUR_H
