@@ -70,16 +70,16 @@ CMatrice* CQuaternion::QuaternionToMatrice()
     CMatrice* matriceResultat = NULL;
 
     int x1y1 = (1 - 2 * sqrt(this->m_iY)) - (2 * sqrt(this->m_iZ));
-    int x1y2 = 0;
-    int x1y3 = 0;
+    int x1y2 = (2 * this->m_iY * this->m_iX) - (2 * this->m_iZ * this->m_iW);
+    int x1y3 = (2 * this->m_iZ * this->m_iX) + (2 * this->m_iY * this->m_iW);
 
-    int x2y1 = 0;
-    int x2y2 = 0;
-    int x2y3 = 0;
+    int x2y1 = (2 * this->m_iY * this->m_iX) + (2 * this->m_iZ * this->m_iW);
+    int x2y2 = (1 - 2 * sqrt(this->m_iX)) - (2 * sqrt(this->m_iZ));
+    int x2y3 = (2 * this->m_iY * this->m_iZ) - (2 * this->m_iX * this->m_iW);
 
-    int x3y1 = 0;
-    int x3y2 = 0;
-    int x3y3 = 0;
+    int x3y1 = (2 * this->m_iZ * this->m_iX) - (2 * this->m_iY * this->m_iW);
+    int x3y2 = (2 * this->m_iY * this->m_iZ) + (2 * this->m_iX * this->m_iW);
+    int x3y3 = (1 - 2 * sqrt(this->m_iX)) - (2 * sqrt(this->m_iY));;
 
     matriceResultat = new CMatrice(x1y1,x1y2,x1y3,
                                x2y1,x2y2,x2y3,
