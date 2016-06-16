@@ -1,4 +1,5 @@
 #include "SceneOpenGL.h"
+#include "CVecteur.h"
 
 using namespace std;
 
@@ -15,7 +16,6 @@ int main(int argc, char **argv)
         return result;
 
     scene.mainLoop();
-
 
     return 0;
 }

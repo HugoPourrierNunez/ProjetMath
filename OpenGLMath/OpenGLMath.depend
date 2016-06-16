@@ -1026,7 +1026,7 @@
 1465986431 source:d:\pc\documents\openglmath\texture.cpp
 	"Texture.h"
 
-1466080242 source:d:\pc\documents\github\projetmath\openglmath\cquaternion.cpp
+1466084705 source:d:\pc\documents\github\projetmath\openglmath\cquaternion.cpp
 	"header/CQuaternion.h"
 
 1465920432 d:\pc\documents\github\projetmath\openglmath\header\cquaternion.h
@@ -1056,7 +1056,8 @@
 	<stdlib.h>
 	"CVecteur.h"
 
-1465915224 d:\pc\documents\github\projetmath\openglmath\cvecteur.h
+1466084954 d:\pc\documents\github\projetmath\openglmath\cvecteur.h
+	<iostream>
 	<math.h>
 
 1465749760 d:\pc\documents\github\projetmath\openglmath\shader.h
@@ -1407,11 +1408,12 @@
 	"begin_code.h"
 	"close_code.h"
 
-1466078449 source:d:\pc\documents\github\projetmath\openglmath\cvecteur.cpp
+1466084871 source:d:\pc\documents\github\projetmath\openglmath\cvecteur.cpp
 	"CVecteur.h"
 
-1466081951 source:d:\pc\documents\github\projetmath\openglmath\main.cpp
+1466084370 source:d:\pc\documents\github\projetmath\openglmath\main.cpp
 	"SceneOpenGL.h"
+	"CVecteur.h"
 
 1466011698 d:\pc\documents\github\projetmath\openglmath\sceneopengl.h
 	<GL/glew.h>
@@ -1707,8 +1709,7 @@
 
 1465739354 d:\pc\documents\github\projetmath\openglmath\sdl-i686-w64-mingw32\include\glm\gtc\type_ptr.inl
 
-1465920432 d:\pc\documents\github\projetmath\openglmath\cquaternion.h
-	"CVecteur.h"
+1466084498 d:\pc\documents\github\projetmath\openglmath\cquaternion.h
 	"SquareMatrice.h"
 
 1465995454 d:\pc\documents\github\projetmath\openglmath\plane.h
@@ -1720,7 +1721,7 @@
 1465995462 source:d:\pc\documents\github\projetmath\openglmath\plane.cpp
 	"Plane.h"
 
-1466011749 source:d:\pc\documents\github\projetmath\openglmath\sceneopengl.cpp
+1466084934 source:d:\pc\documents\github\projetmath\openglmath\sceneopengl.cpp
 	"SceneOpenGL.h"
 
 1465749759 source:d:\pc\documents\github\projetmath\openglmath\shader.cpp

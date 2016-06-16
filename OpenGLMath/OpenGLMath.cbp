@@ -50,23 +50,6 @@
 			<Add library="SDL-i686-w64-mingw32\dll\zlib1.dll" />
 			<Add directory="C:/Program Files (x86)/CodeBlocks/MinGW/SDL-i686-w64-mingw32/lib" />
 		</Linker>
-		<Unit filename="CQuaternion.cpp" />
-		<Unit filename="CQuaternion.h" />
-		<Unit filename="CVecteur.cpp" />
-		<Unit filename="CVecteur.h" />
-		<Unit filename="Cube.cpp" />
-		<Unit filename="Cube.h" />
-		<Unit filename="Plane.cpp" />
-		<Unit filename="Plane.h" />
-		<Unit filename="SceneOpenGL.cpp" />
-		<Unit filename="SceneOpenGL.h" />
-		<Unit filename="Shader.cpp" />
-		<Unit filename="Shader.h" />
-		<Unit filename="SquareMatrice.cpp" />
-		<Unit filename="SquareMatrice.h" />
-		<Unit filename="Texture.cpp" />
-		<Unit filename="Texture.h" />
-		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

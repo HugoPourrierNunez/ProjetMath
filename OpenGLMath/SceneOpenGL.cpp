@@ -189,7 +189,7 @@ void SceneOpenGl::mainLoop()
         {
             angle+=1;
             if(angle==360) angle=0;
-            quatRotation->reinit(angle,new CVecteur(1/3.74,2/3.74,3/3.74));
+            quatRotation->reinit(angle,new CVecteur(1,2,3,true));
             rotation = quatRotation->QuaternionToMatrice();
             modelview->mult(rotation);
         }

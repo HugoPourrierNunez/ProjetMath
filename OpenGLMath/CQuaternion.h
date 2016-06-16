@@ -1,7 +1,6 @@
 #ifndef CQUATERNION_H
 #define CQUATERNION_H
 
-#include "CVecteur.h"
 #include "SquareMatrice.h"
 
 class CQuaternion
