@@ -6,6 +6,7 @@
 #include <stdlib.h>
 
 #include "CVecteur.h"
+
 class CQuaternion;
 
 class SquareMatrice

@@ -63,6 +63,8 @@
 		<Unit filename="SceneOpenGL.h" />
 		<Unit filename="Shader.cpp" />
 		<Unit filename="Shader.h" />
+		<Unit filename="Sphere.cpp" />
+		<Unit filename="Sphere.h" />
 		<Unit filename="SquareMatrice.cpp" />
 		<Unit filename="SquareMatrice.h" />
 		<Unit filename="Texture.cpp" />

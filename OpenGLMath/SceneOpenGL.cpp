@@ -114,6 +114,9 @@ void SceneOpenGl::mainLoop()
     Texture *caisse = new Texture("images/caisse.jpg");
     caisse->load();
 
+    Texture *terre = new Texture("images/grass.jpg");
+    terre->load();
+
 
     Texture *grass = new Texture("images/grass.jpg");
     grass->load();
@@ -140,12 +143,12 @@ void SceneOpenGl::mainLoop()
 
     SquareMatrice *translate = new SquareMatrice(4,true);
 
-    GLUquadric* quadrique;
+    GLUquadric* quadratic;
 
-    quadrique = gluNewQuadric();
+    quadratic = gluNewQuadric();
 
-
-//    gluSphere()
+    gluQuadricNormals(quadratic, GLU_SMOOTH);
+    gluQuadricTexture(quadratic, GL_TRUE);
 
     // Boucle principale
 
@@ -164,22 +167,22 @@ void SceneOpenGl::mainLoop()
                 terminer = true;
             else if(m_events.key.keysym.scancode == SDL_SCANCODE_A)
             {
-                translateCam->setX(translateCam->getX()+speedCam);
+                translateCam->setX(translateCam->getX()-speedCam);
                 camera->reinit(translateCam,20,0);
             }
             else if(m_events.key.keysym.scancode == SDL_SCANCODE_D)
             {
-                translateCam->setX(translateCam->getX()-speedCam);
+                translateCam->setX(translateCam->getX()+speedCam);
                 camera->reinit(translateCam,20,0);
             }
             else if(m_events.key.keysym.scancode == SDL_SCANCODE_W)
             {
-                translateCam->setZ(translateCam->getZ()+speedCam);
+                translateCam->setZ(translateCam->getZ()-speedCam);
                 camera->reinit(translateCam,20,0);
             }
             else if(m_events.key.keysym.scancode == SDL_SCANCODE_S)
             {
-                translateCam->setZ(translateCam->getZ()-speedCam);
+                translateCam->setZ(translateCam->getZ()+speedCam);
                 camera->reinit(translateCam,20,0);
             }
         }
@@ -205,7 +208,8 @@ void SceneOpenGl::mainLoop()
         modelview->mult(translate);
         modelview->mult(camera);
 
-        cube->draw(modelview,projection,shader,caisse);
+        Sphere::draw(2,100,100,projection,modelview,shader,terre);
+//        cube->draw(modelview,projection,shader,caisse);
 
         modelview->reinit(true);
         modelview->mult(camera);

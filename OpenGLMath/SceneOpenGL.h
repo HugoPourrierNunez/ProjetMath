@@ -30,6 +30,7 @@
 #include "Texture.h"
 #include "Plane.h"
 #include "math.h"
+#include "Sphere.h"
 
 class SceneOpenGl
 {

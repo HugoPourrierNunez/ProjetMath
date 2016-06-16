@@ -1042,7 +1042,7 @@
 	<stdlib.h>
 	"CVecteur.h"
 
-1466010272 source:d:\pc\documents\github\projetmath\openglmath\cube.cpp
+1466088533 source:d:\pc\documents\github\projetmath\openglmath\cube.cpp
 	"Cube.h"
 
 1465995475 d:\pc\documents\github\projetmath\openglmath\cube.h
@@ -1050,7 +1050,7 @@
 	"Shader.h"
 	"Texture.h"
 
-1465996002 d:\pc\documents\github\projetmath\openglmath\squarematrice.h
+1466090447 d:\pc\documents\github\projetmath\openglmath\squarematrice.h
 	<iostream>
 	<stdio.h>
 	<stdlib.h>
@@ -1411,11 +1411,11 @@
 1466084961 source:d:\pc\documents\github\projetmath\openglmath\cvecteur.cpp
 	"CVecteur.h"
 
-1466086751 source:d:\pc\documents\github\projetmath\openglmath\main.cpp
+1466094186 source:d:\pc\documents\github\projetmath\openglmath\main.cpp
 	"SceneOpenGL.h"
 	"CVecteur.h"
 
-1466011698 d:\pc\documents\github\projetmath\openglmath\sceneopengl.h
+1466090453 d:\pc\documents\github\projetmath\openglmath\sceneopengl.h
 	<GL/glew.h>
 	<GL3/gl3.h>
 	<glm/glm.hpp>
@@ -1431,6 +1431,7 @@
 	"Texture.h"
 	"Plane.h"
 	"math.h"
+	"Sphere.h"
 
 1465739353 d:\pc\documents\github\projetmath\openglmath\sdl-i686-w64-mingw32\include\glm\glm.hpp
 	"core/_fixes.hpp"
@@ -1721,7 +1722,7 @@
 1465995462 source:d:\pc\documents\github\projetmath\openglmath\plane.cpp
 	"Plane.h"
 
-1466087246 source:d:\pc\documents\github\projetmath\openglmath\sceneopengl.cpp
+1466096759 source:d:\pc\documents\github\projetmath\openglmath\sceneopengl.cpp
 	"SceneOpenGL.h"
 
 1465749759 source:d:\pc\documents\github\projetmath\openglmath\shader.cpp
@@ -1734,4 +1735,12 @@
 
 1465986431 source:d:\pc\documents\github\projetmath\openglmath\texture.cpp
 	"Texture.h"
+
+1466097178 source:d:\pc\documents\github\projetmath\openglmath\sphere.cpp
+	"Sphere.h"
+
+1466090515 d:\pc\documents\github\projetmath\openglmath\sphere.h
+	"Texture.h"
+	"SquareMatrice.h"
+	"Shader.h"
 
