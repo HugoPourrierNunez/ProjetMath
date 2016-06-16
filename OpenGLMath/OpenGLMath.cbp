@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="OpenGLMath" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/OpenGLMath" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/OpenGLMath" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add directory="SDL-i686-w64-mingw32/include/SDL2" />
+			<Add directory="SDL-i686-w64-mingw32/include" />
+		</Compiler>
+		<Linker>
+			<Add library="mingw32" />
+			<Add library="SDL-i686-w64-mingw32\lib\libSDL2main.a" />
+			<Add library="SDL-i686-w64-mingw32\dll\SDL2.dll" />
+			<Add library="SDL-i686-w64-mingw32\lib\libglew32.a" />
+			<Add library="SDL-i686-w64-mingw32\dll\glew32.dll" />
+			<Add library="opengl32" />
+			<Add library="SDL-i686-w64-mingw32\lib\libSDL2_image.a" />
+			<Add library="SDL-i686-w64-mingw32\dll\libjpeg-8.dll" />
+			<Add library="SDL-i686-w64-mingw32\dll\libpng15-15.dll" />
+			<Add library="SDL-i686-w64-mingw32\dll\libtiff-5.dll" />
+			<Add library="SDL-i686-w64-mingw32\dll\libtiffxx-5.dll" />
+			<Add library="SDL-i686-w64-mingw32\dll\libwebp-2.dll" />
+			<Add library="SDL-i686-w64-mingw32\dll\SDL2_image.dll" />
+			<Add library="SDL-i686-w64-mingw32\dll\zlib1.dll" />
+			<Add directory="C:/Program Files (x86)/CodeBlocks/MinGW/SDL-i686-w64-mingw32/lib" />
+		</Linker>
+		<Unit filename="CQuaternion.cpp" />
+		<Unit filename="CQuaternion.h" />
+		<Unit filename="CVecteur.cpp" />
+		<Unit filename="CVecteur.h" />
+		<Unit filename="Cube.cpp" />
+		<Unit filename="Cube.h" />
+		<Unit filename="Plane.cpp" />
+		<Unit filename="Plane.h" />
+		<Unit filename="SceneOpenGL.cpp" />
+		<Unit filename="SceneOpenGL.h" />
+		<Unit filename="Shader.cpp" />
+		<Unit filename="Shader.h" />
+		<Unit filename="SquareMatrice.cpp" />
+		<Unit filename="SquareMatrice.h" />
+		<Unit filename="Texture.cpp" />
+		<Unit filename="Texture.h" />
+		<Unit filename="main.cpp" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
