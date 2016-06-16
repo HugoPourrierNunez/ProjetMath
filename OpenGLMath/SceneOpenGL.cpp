@@ -133,12 +133,19 @@ void SceneOpenGl::mainLoop()
     SquareMatrice *camera = new SquareMatrice(translateCam,20,0);
     SquareMatrice *modelview = new SquareMatrice(4,true);
 
-    SquareMatrice *rotation ;
+    SquareMatrice *rotation ;//= new SquareMatrice(angle,CVecteur(0,1,0));
 
     CQuaternion *quatRotation = new CQuaternion(angle,new CVecteur(0,1,0));
     rotation = quatRotation->QuaternionToMatrice();
 
     SquareMatrice *translate = new SquareMatrice(4,true);
+
+    GLUquadric* quadrique;
+
+    quadrique = gluNewQuadric();
+
+
+//    gluSphere()
 
     // Boucle principale
 
@@ -189,8 +196,10 @@ void SceneOpenGl::mainLoop()
         {
             angle+=1;
             if(angle==360) angle=0;
+//            rotation->reinit(angle,CVecteur(1,2,3,true));
             quatRotation->reinit(angle,new CVecteur(1,2,3,true));
             rotation = quatRotation->QuaternionToMatrice();
+//            rotation->print();
             modelview->mult(rotation);
         }
         modelview->mult(translate);

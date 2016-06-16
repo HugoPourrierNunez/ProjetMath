@@ -125,7 +125,7 @@ void SquareMatrice::reinit(float angle,CVecteur axe)
         cout<<"Error size matrice while reinnit";
         return;
     }
-
+//    cout<<"reinit rotation"<<endl;
     angle = ( angle * 3.1416 ) / 180 ;
 //    cout<<"in fonction";
 //    if(axe == SquareMatrice::AxeX)

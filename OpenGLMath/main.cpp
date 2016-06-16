@@ -17,5 +17,15 @@ int main(int argc, char **argv)
 
     scene.mainLoop();
 
+//    SquareMatrice *m = new SquareMatrice(45,CVecteur(1,2,3));
+//    CQuaternion *q = new CQuaternion(45, new CVecteur(1,2,3,true));
+//
+//    CVecteur *v = new CVecteur(1,2,3);
+//    cout<<v->getNorme();
+//    m->print();
+//    cout<<endl;
+//    m=q->QuaternionToMatrice();
+//    m->print();
+
     return 0;
 }
